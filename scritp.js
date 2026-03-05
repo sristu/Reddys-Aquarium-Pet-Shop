@@ -1,11 +1,15 @@
-const faders = document.querySelectorAll('.fade');
+document.querySelectorAll("nav a").forEach(link => {
 
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-});
+link.addEventListener("click",function(e){
 
-faders.forEach(el=>observer.observe(el));
+e.preventDefault()
+
+document.querySelector(this.getAttribute("href")).scrollIntoView({
+
+behavior:"smooth"
+
+})
+
+})
+
+})
